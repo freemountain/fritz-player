@@ -23,7 +23,7 @@ npm start
 ```
 
 ### Binaries
-* Unter Github [Release](https://github.com/freemountain/avm-player/releases/tag/v0.0.1)
+* Unter Github [Release](https://github.com/freemountain/fritz-player/releases/tag/v0.0.1)
 * OSX funktioniert
 * Linux
   * libvlc muss vorhanden sein
