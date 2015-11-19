@@ -1,5 +1,7 @@
 var React = require('react');
+
 var _player = null;
+
 var Player = React.createClass({
 
   shouldComponentUpdate: function() {
@@ -10,13 +12,10 @@ var Player = React.createClass({
     var node = this.getDOMNode();
     var canvas = document.createElement('canvas');
     canvas.id = 'rPlayer';
-    window._no = node;
     node.appendChild(canvas);
 
-
-    var wjs = require("./../raw/wcjs-renderer");
+    var wjs = window.__req("./node/wcjs-renderer");
     if(!_player) _player = wjs.init(canvas, ["--network-caching=500 -vvv"]);
-    window._p = _player;
   },
 
   componentWillReceiveProps: function(nextProps, o) {
@@ -24,11 +23,10 @@ var Player = React.createClass({
     if(this.props.play === nextProps.play) return;
     if(!nextProps.play) _player.pause();
     if(nextProps.play) _player.play();
-
   },
 
   render: function() {
-    console.log('renderP');
+    console.log('renderPlayer');
     return (
       <div/>
     );

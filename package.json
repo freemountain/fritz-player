@@ -4,19 +4,19 @@
   "version": "0.0.1",
   "main": "build/app.js",
   "scripts": {
-    "before-build": "mkdir -p build && cp -a src/raw/ build/raw && ./node_modules/.bin/babel --ignore 'raw' -wD -d build src"
+    "build": "node build.js",
+    "clean": "rm -rf out/",
+    "start": "./node_modules/.bin/nw out/work/"
   },
   "dependencies": {
     "immutable": "^3.7.5",
     "morearty": "^0.7.25",
-    "node-ssdp": "^2.6.3",
+    "nw": "^0.12.3",
     "radium": "^0.15.3",
     "react": "^0.14.2",
     "react-fontawesome": "^0.3.3",
     "react-list": "^0.7.3",
-    "react-toggle-display": "^2.0.2",
-    "request-promise": "^1.0.2",
-    "wcjs-prebuilt": "^2.0.7"
+    "react-toggle-display": "^2.0.2"
   },
   "env": "development",
   "devDependencies": {
@@ -25,8 +25,8 @@
     "babel-preset-react": "^6.1.18",
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
-    "electron-packager": "^5.1.1",
-    "electron-prebuilt": "^0.35.0",
+    "commander": "^2.9.0",
+    "nw-builder": "^2.0.2",
     "shelljs": "^0.5.3"
   }
 }
