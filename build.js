@@ -3,7 +3,7 @@ require('shelljs/global');
 var program = require('commander');
 
 var legalPlatforms = ['osx', 'linux'];
-var envVAr = {
+var envVar = {
   osx: {
     'NW_VERSION': '0.12.3',
     'NW_PLATFORM': 'osx64',
@@ -17,6 +17,9 @@ var envVAr = {
     'WCJS_ARCH':'x64'
   }
 }
+
+var getVar = (v) => envVar[platform][v];
+var getEnv = (v) => v + '=' + getVar(v);
 
 function die(msg) {
   console.log('PANIC: ', msg);
@@ -32,43 +35,36 @@ function sync(target, destination, exclude) {
 
 program
   .version('0.0.1')
+  .option('-P, --pack', 'pack step')
   .option('-p, --platform [p]', 'dd')
   .option('-f, --force', 'false')
   .parse(process.argv);
 
 var platform = process.platform;
 var force = program.force || false;
+var packStep = program.pack || false;
 
 if(program.platform) platform = program.platform;
 if(platform === 'darwin') platform = 'osx';
 
 if(legalPlatforms.indexOf(platform) === -1)
   die('platform "' + platform + '" not supported');
+
 console.log('Platform: ', platform);
 console.log('Force: ', force);
 
-var get = (v) => envVAr[platform][v];
-var f = (p, v) => v + '=' + envVAr[platform][v];
-var envString = f('osx', 'WCJS_ARCH') + ' ' + f('osx', 'WCJS_PLATFORM');
-
 mkdir('-p', 'out/work/node');
-
-rm('out/work/index.html', 'out/work/package.json');
-cp('src/index.html', 'out/work/index.html');
-cp('nw_package.json', 'out/work/package.json');
 
 sync('src/node/*', 'out/work/node');
 cd('out/work/node');
 
 if (force) rm('-rf', 'node_modules');
-exec(envString + ' npm install');
+exec(getEnv('WCJS_ARCH') + ' ' + getEnv('WCJS_PLATFORM') + ' npm install');
 cd('../../../');
 
 console.log('build browser bundle...');
 exec('./node_modules/.bin/browserify src/browser.js -t babelify --s app --outfile out/work/bundle.js');
 
-var makeApp = ls('out/fritz-player/' + get('NW_PLATFORM')).length !== 0 && force;
-if(!makeApp) exit();
-
+if(!packStep) exit();
 console.log('build app bundle...');
-exec('./node_modules/.bin/nwbuild -v ' + get('NW_VERSION') + ' -p ' + get('NW_PLATFORM') + ' -o out out/work');
+exec('./node_modules/.bin/nwbuild -v ' + getVar('NW_VERSION') + ' -p ' + getVar('NW_PLATFORM') + ' -o out out/work');

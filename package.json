@@ -2,7 +2,7 @@
   "name": "fritz-player",
   "description": "avm dvb-c tv player",
   "version": "0.0.1",
-  "main": "build/app.js",
+  "main": "out/work/index.html",
   "scripts": {
     "build": "node build.js",
     "clean": "rm -rf out/",

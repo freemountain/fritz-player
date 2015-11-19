@@ -16,10 +16,9 @@
 <body>
   <div id="content"></div>
   <script>
-  console.log('ccccss', document);
-var c = document.getElementById('content');
-
-    setTimeout(function() {app(require);}, 2000 );
+    document.addEventListener('DOMContentLoaded', function(){ 
+        app(require);
+    }, false);
   </script>
   <script type="text/javascript" src="./bundle.js"></script>
 </body>
