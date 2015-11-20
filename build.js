@@ -2,8 +2,14 @@
 require('shelljs/global');
 var program = require('commander');
 
-var legalPlatforms = ['osx', 'linux'];
+var legalPlatforms = ['osx', 'linux', 'win'];
 var envVar = {
+  win: {
+    'NW_VERSION': '0.12.3',
+    'NW_PLATFORM': 'win64',
+    'WCJS_PLATFORM':'win',
+    'WCJS_ARCH':'x64'
+  },
   osx: {
     'NW_VERSION': '0.12.3',
     'NW_PLATFORM': 'osx64',
@@ -54,6 +60,9 @@ console.log('Platform: ', platform);
 console.log('Force: ', force);
 
 mkdir('-p', 'out/work/node');
+
+cp('nw_package.json', 'out/work/package.json');
+cp('src/index.html', 'out/work/index.html');
 
 sync('src/node/*', 'out/work/node');
 cd('out/work/node');
