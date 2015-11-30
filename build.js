@@ -61,6 +61,8 @@ console.log('Force: ', force);
 
 mkdir('-p', 'out/work/node');
 
+rm('out/work/package.json');
+rm('out/work/index.html');
 cp('nw_package.json', 'out/work/package.json');
 cp('src/index.html', 'out/work/index.html');
 

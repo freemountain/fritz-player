@@ -1,52 +1,51 @@
+var React = require('react');
 var Morearty = require('morearty');
 
-var React = require('react');
-var ReactList = require('react-list');
-var ListElement = require('./ListElement.js');
-var Control = require('./Control.js');
-var List = React.createClass({
+const List = require('material-ui/lib/lists/list');
+const ListItem = require('material-ui/lib/lists/list-item');
+var Paper = require('material-ui/lib/paper');
+
+var Bar = React.createClass({
   mixins: [Morearty.Mixin],
 
+  onItemClick: function(k) {
+    console.log('klicked', k);
+    if(this.props.onItemClick) this.props.onItemClick(k);
+  },
 
+  itemRenderer: function(item, index) {
+    return <ListItem
+      onClick={() => this.onItemClick(index)}
+      primaryText={item.title}
+      secondaryText={item.secondaryText}
+      />;
+  },
 
   render: function() {
     var binding = this.getDefaultBinding();
-    var stations = binding.get('stations').toJS();
+    var stationsBinding = binding.sub('stations');
+    var stations = stationsBinding.get();
 
-    var r = function(i, k) {
-      return <ListElement
-        key={k}
-        data={stations[k]}
-        handler={ (d) => this.props.handler(d)}/>;
-    }.bind(this);
-
-    var listStyle = {
-      overflow: 'auto',
-      height: binding.get('dimensions.height') - 50,
-
+    //https://css-tricks.com/centering-percentage-widthheight-elements/
+    var style = {
+      position:'absolute',
+      transform: 'translate(0, -50%)',
+      width: 300,
+      height: '94%',
+      left: '2%',
+      top: '50%',
+      overflow:'scroll'
     };
-
-    var containerStyle = {
-      color: 'white',
-      height: binding.get('dimensions.height'),
-      backgroundColor: 'rgba(5, 5, 5, 0.8)',
-      borderRight: '3px solid black',
-    };
-
 
 
     return (
-      <div style={containerStyle}>
-        <div style={listStyle}>
-          <ReactList
-            length = {binding.get('stations').count()}
-            itemRenderer = {r}
-          />
-        </div>
-        <Control binding={binding} />
-      </div>
+      <Paper zDepth={3} style={style}>
+        <List>
+          { stations.map(this.itemRenderer).toArray() }
+        </List>
+      </Paper>
     );
   }
 });
 
-module.exports = List;
+module.exports = Bar;

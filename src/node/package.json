@@ -2,8 +2,10 @@
   "name": "node",
   "version": "0.0.1",
   "dependencies": {
+    "fuzzy": "^0.1.1",
     "node-ssdp": "^2.6.3",
-    "wcjs-prebuilt": "^2.0.7",
-    "request-promise": "^1.0.2"
+    "ramda": "^0.18.0",
+    "request-promise": "^1.0.2",
+    "wcjs-prebuilt": "^2.0.7"
   }
 }

@@ -7,11 +7,9 @@ var Bar = React.createClass({
 
   render: function() {
     var binding = this.getDefaultBinding();
-    var style = {
-      position: 'absolute',
-    }
+
     return (
-      <div style={style}>
+      <div>
         <ToggleDisplay
                  show={binding.get('sidebar.show')}>
           {this.props.children}

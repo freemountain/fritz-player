@@ -6,16 +6,18 @@
   "scripts": {
     "build": "node build.js",
     "clean": "rm -rf out/",
-    "start": "./node_modules/.bin/nw out/work/"
+    "start": "./node_modules/.bin/nw out/work/",
+    "dev": "node dev.js"
   },
   "dependencies": {
     "immutable": "^3.7.5",
+    "material-ui": "^0.13.3",
     "morearty": "^0.7.25",
     "nw": "^0.12.3",
     "radium": "^0.15.3",
     "react": "^0.14.2",
     "react-fontawesome": "^0.3.3",
-    "react-list": "^0.7.3",
+    "react-tap-event-plugin": "^0.2.1",
     "react-toggle-display": "^2.0.2"
   },
   "env": "development",
@@ -26,7 +28,9 @@
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
     "commander": "^2.9.0",
+    "file-watch": "^0.1.0",
     "nw-builder": "^2.0.2",
-    "shelljs": "^0.5.3"
+    "shelljs": "^0.5.3",
+    "watchify": "^3.6.1"
   }
 }
