@@ -1,4 +1,6 @@
-//var ipc = require('electron').ipcRenderer;
+//material-ui needs this
+var injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
 
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -11,10 +13,12 @@ module.exports = function(_require) {
 
   var ctx = Morearty.createContext({
     initialState: {
+      sources: [],
       stations: [],
       player: {
         play: false,
         url: '',
+        id: ''
       },
       sidebar: {
         show: true

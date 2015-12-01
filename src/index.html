@@ -17,7 +17,17 @@
   <div id="content"></div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-        app(require);
+      var _require = function() {};
+
+      window.__ENV = (window.nwDispatcher) ? 'nw' : 'browser';
+      window.__DEBUG = true;
+
+      if(__DEBUG)
+        global.window.nwDispatcher.requireNwGui().Window.get().showDevTools();
+
+      if(__ENV === 'nw') _require = require;
+
+      app(_require);
     }, false);
   </script>
   <script type="text/javascript" src="./bundle.js"></script>

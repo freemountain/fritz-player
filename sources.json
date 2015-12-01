@@ -1,0 +1,903 @@
+[
+ {
+  "list": [
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=114&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,106,6551,2171,6550,6552,6553,6554,6556",
+    "length": "-1",
+    "title": "hr-fernsehen HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "9dfc6ec7-327c-20f7-7b0a-8cfb2a81e655",
+    "icon": "http://logos.xmltv.se/hr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=114&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,105,6661,6662,6663,6664,6665,6666,6667,6669",
+    "length": "-1",
+    "title": "arte HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "dabf11de-4683-6218-e627-1493237eec2e",
+    "icon": "http://logos.xmltv.se/hd.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,5130,5131,5132,5133,5134,5135",
+    "length": "-1",
+    "title": "SWR Fernsehen RP HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "6598db1f-60df-9764-8ed3-681d7d0a5127",
+    "icon": "http://logos.xmltv.se/sr.swr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,5100,5101,1170,2171,2172,5102,5103,5104,5105",
+    "length": "-1",
+    "title": "Das Erste HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "702d4eb8-c3c7-ac40-83d2-1cd58a1c3761",
+    "icon": "http://logos.xmltv.se/hd.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,5500,5501,5502,5503,5504,5505",
+    "length": "-1",
+    "title": "WDR Köln HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "07ca2f68-c961-9091-4b22-305f6209cd68",
+    "icon": "http://logos.xmltv.se/wdr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=338&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,5200,5201,5202,5203,5204,5205",
+    "length": "-1",
+    "title": "Bayerisches Fernsehen Süd HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "46983f45-023e-a3bc-c8f4-e436de088605"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=338&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,5240,5241,5242,5243,5244,5245",
+    "length": "-1",
+    "title": "NDR FS HH HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "d108679c-9b38-b946-6145-d60e04dcbb7f",
+    "icon": "http://logos.xmltv.se/ndr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=338&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,5320,5321,5322,5323,5324,5325",
+    "length": "-1",
+    "title": "MDR Sachsen HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "c0523b30-0e6d-275f-db07-c302a6358f5a",
+    "icon": "http://logos.xmltv.se/mdr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=450&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,5310,5311,5312,5313,5314,5315",
+    "length": "-1",
+    "title": "rbb Berlin HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "61b66911-6e8e-1c91-5a65-96611629f653",
+    "icon": "http://logos.xmltv.se/rbbberl.rbb-online.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=450&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,6100,6110,6120,6121,6130,6131,6132,6170",
+    "length": "-1",
+    "title": "ZDF HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "b67283ab-7cca-3d57-88f1-f32a2e38985c",
+    "icon": "http://logos.xmltv.se/hd.zdf.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=498&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,103,6791,6792,6794,6796",
+    "length": "-1",
+    "title": "HSE24 HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "00aa9fb4-e06a-4105-b7db-ebb7fe690647"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=498&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,104,6741,6742,6744,6746",
+    "length": "-1",
+    "title": "QVC HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "bc7a4ac3-d6c1-5262-652d-7c8d68e3d0b6"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=626&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,110,6691,6530,6690,6692,6693",
+    "length": "-1",
+    "title": "3sat HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "f410c066-0441-aaf5-4a98-cbd3ca691bff",
+    "icon": "http://logos.xmltv.se/hd.3sat.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=642&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,106,581,582,583,584",
+    "length": "-1",
+    "title": "PHOENIX HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "41334354-e544-6153-39ab-efeadb0fd7d7",
+    "icon": "http://logos.xmltv.se/phoenix.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=642&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,104,541,542,543,544,547",
+    "length": "-1",
+    "title": "zdf_neo HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "6b3f0e17-8d83-c4a0-a47a-3424734236a7"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=642&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,102,431,430,432,433,434",
+    "length": "-1",
+    "title": "KiKA HD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "c9ad5124-51e2-5db0-582f-7ca01b271557"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=122&bw=8&msys=dvbc&mtype=64qam&sr=6900&specinv=0&pids=0,16,17,18,20,107,1301,1302,1303,1304,1305,1306",
+    "length": "-1",
+    "title": "SR Fernsehen",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "3e363579-68b4-689a-0308-73cd2487215e"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=122&bw=8&msys=dvbc&mtype=64qam&sr=6900&specinv=0&pids=0,16,17,18,20,153,4471,4472",
+    "length": "-1",
+    "title": "WWTV",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "a2c02ed7-9afd-76db-bd22-74ed241e5557"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=122&bw=8&msys=dvbc&mtype=64qam&sr=6900&specinv=0&pids=0,16,17,18,20,154,4521,4522",
+    "length": "-1",
+    "title": "rheinahr.tv",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "5ad251bd-b878-2814-4b84-ad60b781d6e3"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=122&bw=8&msys=dvbc&mtype=64qam&sr=6900&specinv=0&pids=0,16,17,18,20,151,4571,564,4572,4579",
+    "length": "-1",
+    "title": "OK4",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "43013e93-e532-6486-1ec3-061c44744976"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=122&bw=8&msys=dvbc&mtype=64qam&sr=6900&specinv=0&pids=0,16,17,18,20,152,4591,4592",
+    "length": "-1",
+    "title": "TVM",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "a39d959f-4bf8-6d39-f323-d0213abf05e8",
+    "icon": "http://logos.xmltv.se/tv2.dk.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=122&bw=8&msys=dvbc&mtype=64qam&sr=6900&specinv=0&pids=0,16,17,18,20,101,1401,1400,1402,1403,1404,1406",
+    "length": "-1",
+    "title": "RTL",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "134c7ead-ac59-bdee-3c26-968773a60130",
+    "icon": "http://logos.xmltv.se/crimehd.rtl.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=122&bw=8&msys=dvbc&mtype=64qam&sr=6900&specinv=0&pids=0,16,17,18,20,102,2701,2702,2703,2704,2706",
+    "length": "-1",
+    "title": "SAT.1",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "88730f3c-7d09-2194-6634-beba9941532a",
+    "icon": "http://logos.xmltv.se/sat1.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,1400,1401,1402,1403,1404,1405,1406,2171,2178",
+    "length": "-1",
+    "title": "ARD-alpha",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "939b0db0-6ce9-04a1-9f82-924d8da65717",
+    "icon": "http://logos.xmltv.se/br-alpha.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,100,101,102,104,170,2171",
+    "length": "-1",
+    "title": "tagesschau24",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "8fd89ac9-8d1d-61ae-bd2d-ba5092d8c6b4",
+    "icon": "http://logos.xmltv.se/einsextra.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,200,201,202,203,204,206,270,2171",
+    "length": "-1",
+    "title": "Einsfestival",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "7b31a542-8a78-92df-5d64-46b2e63f5165",
+    "icon": "http://logos.xmltv.se/einsfestival.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,300,301,302,303,304,306,370,2171",
+    "length": "-1",
+    "title": "EinsPlus",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "8908d0ae-9bcd-db84-8b37-ea99cdb69127",
+    "icon": "http://logos.xmltv.se/einsplus.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,400,401,402,403,404,470,2171",
+    "length": "-1",
+    "title": "arte",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "3c3b4c85-76fc-c4b0-fd0c-387e709b6e33",
+    "icon": "http://logos.xmltv.se/arte.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=330&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,500,501,502,503,504",
+    "length": "-1",
+    "title": "PHOENIX",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "b1cb77fb-d2e7-bee4-c1ee-1b87bed6f9cb",
+    "icon": "http://logos.xmltv.se/phoenix.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=338&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,100,101,102,103,104,105,106,2070,2171",
+    "length": "-1",
+    "title": "Das Erste",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "48de7963-fe0e-a846-4e8e-205749311481",
+    "icon": "http://logos.xmltv.se/hd.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=338&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,200,201,202,203,204,205,206,2171,2178",
+    "length": "-1",
+    "title": "Bayerisches FS Süd",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "3cce4e0f-62d8-b143-79a7-f16d5eedd4ef"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=338&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,300,301,302,303,304,2171,2270",
+    "length": "-1",
+    "title": "hr-fernsehen",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "15d4d0dc-abc3-f22f-600f-234ae7cdaabc",
+    "icon": "http://logos.xmltv.se/hr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=338&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,600,601,602,603,604,605,2171,2370",
+    "length": "-1",
+    "title": "WDR Köln",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "0449c1c6-9d3c-dd8a-dd90-095155f399b8",
+    "icon": "http://logos.xmltv.se/wdr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=338&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,800,801,802,803,804,806,2171,2470",
+    "length": "-1",
+    "title": "SWR Fernsehen RP",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "561b1d68-a570-e7d3-ee6e-d7657c26e40b",
+    "icon": "http://logos.xmltv.se/sr.swr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=378&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,103,2815,2816,2825",
+    "length": "-1",
+    "title": "Sky Select",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "a3c748bb-bb17-0fc8-5896-ddde70d8e91d",
+    "icon": "http://logos.xmltv.se/select.sky.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=394&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,111,1501,1500,1502,1504,1506",
+    "length": "-1",
+    "title": "SUPER RTL",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "ac9bf466-086a-6486-c9cf-a15e98d3286e",
+    "icon": "http://logos.xmltv.se/super.rtl.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=394&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,112,1601,1600,1602,1604,1606",
+    "length": "-1",
+    "title": "RTL II",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "a8206db1-56e8-a24d-bdfd-7f71a67ff22c",
+    "icon": "http://logos.xmltv.se/living.rtl.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=394&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,113,1701,1700,1702,1704,1706",
+    "length": "-1",
+    "title": "VOX",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "8d082df1-35b6-89eb-d8a3-c787a68b60e7",
+    "icon": "http://logos.xmltv.se/vox.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=394&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,114,1901,1902,1904,1906",
+    "length": "-1",
+    "title": "n-tv",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "1c619edd-fedc-6e86-a752-e3dcc0757fc5",
+    "icon": "http://logos.xmltv.se/n-tv.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=394&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,116,2501,2502,2504",
+    "length": "-1",
+    "title": "SPORT1",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "755ffee7-9327-1e8f-f5c9-2a059748a3dc",
+    "icon": "http://logos.xmltv.se/sporthd1.sky.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=402&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,103,1101,1102,1104",
+    "length": "-1",
+    "title": "1-2-3.tv",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "f844d6da-8c6c-1282-5250-14b869955f90"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=402&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,115,401,402",
+    "length": "-1",
+    "title": "BBC World News (eng)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "4ae60464-6bfc-bd1e-4eee-26586aeac77b",
+    "icon": "http://logos.xmltv.se/bbcworldnews.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=402&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,106,451,452,454",
+    "length": "-1",
+    "title": "TV 5 Monde (fre)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "d4ae8841-02c0-a156-aef0-a36299087573",
+    "icon": "http://logos.xmltv.se/polonia.tvp.pl.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=402&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,105,981,980,982,984,986",
+    "length": "-1",
+    "title": "RTL NITRO",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "d2806359-9877-6e04-0ac0-1df48bdfccb0",
+    "icon": "http://logos.xmltv.se/nitro.rtl.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=402&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,104,881,882,884",
+    "length": "-1",
+    "title": "TLC",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "01d239c3-3308-d107-3c20-27a3da9c847b",
+    "icon": "http://logos.xmltv.se/tlc.discovery.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=402&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,110,2251,2252",
+    "length": "-1",
+    "title": "CNN (eng)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "8fd84307-de59-17ab-e2cb-880d98f0eade",
+    "icon": "http://logos.xmltv.se/cnn.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=402&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,107,2371,2372,2374",
+    "length": "-1",
+    "title": "ServusTV",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "091d0dd4-a51e-65ab-ce9a-31df7edabca8",
+    "icon": "http://logos.xmltv.se/servustv.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,111,2601,2622",
+    "length": "-1",
+    "title": "euronews (fre)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "769632ab-0f2d-1742-36eb-0e02eddd590a",
+    "icon": "http://logos.xmltv.se/euronews.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,122,2601,2662",
+    "length": "-1",
+    "title": "euronews (eng)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "3b6afdb2-e3fa-af31-f65f-03bdc4274c08",
+    "icon": "http://logos.xmltv.se/euronews.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,106,2601,1202",
+    "length": "-1",
+    "title": "euronews (ita)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "da96dbf4-849b-f152-b22d-40fe1ee11ec6",
+    "icon": "http://logos.xmltv.se/euronews.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,107,2601,1212",
+    "length": "-1",
+    "title": "euronews (spa)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "ca1e5d63-0b98-e512-c7d9-0bd4aa09f890",
+    "icon": "http://logos.xmltv.se/euronews.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,108,2601,1222",
+    "length": "-1",
+    "title": "euronews (por)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "2c484ab7-69bf-d603-b512-2606156a3cf4",
+    "icon": "http://logos.xmltv.se/euronews.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,109,2601,1232",
+    "length": "-1",
+    "title": "euronews (rus)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "68a43a18-daba-fb94-9d37-5bc82f388d7e",
+    "icon": "http://logos.xmltv.se/euronews.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,114,2391,2392,2394",
+    "length": "-1",
+    "title": "Channel21",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "5a7e0038-45db-9b8a-dcb8-e0c414e1a4a5"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,113,2361,2362",
+    "length": "-1",
+    "title": "Juwelo TV",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "37e3e558-2ab3-93ab-ae37-766354bf4fee"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=410&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,110,2601,2602",
+    "length": "-1",
+    "title": "euronews",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "2e0a2d12-89ab-97ed-8d2b-4acc4f8a9591",
+    "icon": "http://logos.xmltv.se/euronews.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=426&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,103,1011,1012,1013,1014",
+    "length": "-1",
+    "title": "Disney Channel",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "30aebb1d-81b3-80aa-a422-8116a74f7fab",
+    "icon": "http://logos.xmltv.se/disneychannel.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=426&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,102,421,422",
+    "length": "-1",
+    "title": "Bloomberg (eng)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "c8c92b47-0b90-f0ac-810f-e0f7e799dc3d"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=426&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,106,731,732,734,736",
+    "length": "-1",
+    "title": "Bibel TV",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "76194d83-40fe-89a6-7f56-df46ebaff22d",
+    "icon": "http://logos.xmltv.se/bibeltv.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=426&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,101,2261,2262",
+    "length": "-1",
+    "title": "Al Jazeera Int (eng)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "5a3a13a7-1204-fe43-abaf-b1bebb486f50",
+    "icon": "http://logos.xmltv.se/aljazeera.net.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=442&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,104,1181,1182,1184,1186",
+    "length": "-1",
+    "title": "sixx",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "fbbf4ea8-5a4c-3993-d855-055ea13dce52",
+    "icon": "http://logos.xmltv.se/sixx.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=442&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,115,411,412,414",
+    "length": "-1",
+    "title": "TELE 5",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "7eab08a1-9f92-d7db-abc8-218f597fc6d1",
+    "icon": "http://logos.xmltv.se/tele5.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=442&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,113,2921,2922,2924",
+    "length": "-1",
+    "title": "Eurosport",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "54469ab8-ecbc-93e5-1bf4-8973df3a5bee",
+    "icon": "http://logos.xmltv.se/eurosport.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=442&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,101,2201,2202,2203,2204,2206",
+    "length": "-1",
+    "title": "ProSieben",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "a9c59c80-f3d5-1874-dd9e-c03bd6ff0a76",
+    "icon": "http://logos.xmltv.se/prosieben.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=442&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,109,2301,2302,2304,2306",
+    "length": "-1",
+    "title": "kabel eins",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "2a6eda48-90f4-001e-6442-968fe2e0e8e5",
+    "icon": "http://logos.xmltv.se/kabel1.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=442&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,114,2801,2802,2804",
+    "length": "-1",
+    "title": "N24",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "ff2f36f9-3b81-9fb1-e9eb-936eb4bf123d",
+    "icon": "http://logos.xmltv.se/france24.com.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=450&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,100,110,120,121,122,125,130,131,950",
+    "length": "-1",
+    "title": "ZDF",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "6f7e0586-c4ed-3c0b-49a3-47078ef61bea",
+    "icon": "http://logos.xmltv.se/hd.zdf.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=450&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,200,210,220,221,222,225,230,231,250",
+    "length": "-1",
+    "title": "3sat",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "35cd0f5e-7b44-8331-0f0d-061e82940a34",
+    "icon": "http://logos.xmltv.se/hd.3sat.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=450&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,300,310,320,321,325,330,331",
+    "length": "-1",
+    "title": "KiKA",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "2275d301-9805-ed16-659e-67fc68a28467"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=450&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,600,610,620,621,622,625,630,950",
+    "length": "-1",
+    "title": "ZDFinfo",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "39f58fbc-d5be-77f4-78c9-96f3be9e2a5f",
+    "icon": "http://logos.xmltv.se/infokanal.zdf.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=450&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,650,660,670,671,672,675,680,950",
+    "length": "-1",
+    "title": "zdf_neo",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "4c69b43c-7689-86b5-e7b5-d50bf3b05724"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=450&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,1100,1110,950,1120,1121,1122,1125,1130",
+    "length": "-1",
+    "title": "zdf.kultur",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "1c2e17b8-973c-6f38-788d-f8f90437d4df",
+    "icon": "http://logos.xmltv.se/kultur.zdf.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=458&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,600,601,602,603,604,670,2171,2176",
+    "length": "-1",
+    "title": "rbb Berlin",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "c085edba-0b6e-e575-de89-1dd025699240",
+    "icon": "http://logos.xmltv.se/rbbberl.rbb-online.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=458&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,2400,2401,33,2402,2403,2404,2670",
+    "length": "-1",
+    "title": "NDR FS MV",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "0c3fdfbd-40ee-1fc7-a31d-466f7681fdc2",
+    "icon": "http://logos.xmltv.se/ndr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=458&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,2800,2801,34,2802,2803,2804,2805,2870",
+    "length": "-1",
+    "title": "MDR Sachsen",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "af9a832b-481c-7a6f-07ad-7b358681f2ce",
+    "icon": "http://logos.xmltv.se/mdr.daserste.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=466&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,104,441,442,443,444",
+    "length": "-1",
+    "title": "Nickelodeon",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "4a06500d-7a1f-4d0d-bf82-edcfd3cf4ab8",
+    "icon": "http://logos.xmltv.se/nick.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=466&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,112,811,812",
+    "length": "-1",
+    "title": "Folx.TV",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "50d82307-7ffb-2419-1d08-3acd483f16dd"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=466&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,116,2941,2942,2944",
+    "length": "-1",
+    "title": "COMEDY CENTRAL/VIVA",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "02988c8a-7ef9-7eff-8cdc-2ffd75a98d71",
+    "icon": "http://logos.xmltv.se/comedy.sky.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=466&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,101,2281,2282,2284,2286,7011",
+    "length": "-1",
+    "title": "QVC",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "76799f9a-1955-20d0-eac5-f8f12295021a"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=466&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,115,2291,2292,2294",
+    "length": "-1",
+    "title": "DMAX",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "b0e26025-137a-41f3-4cb6-a4c3d5ad74ea",
+    "icon": "http://logos.xmltv.se/dmax.discovery.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=466&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,103,2311,2312,2314,2316",
+    "length": "-1",
+    "title": "HSE24",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "c998870c-1a76-469e-b68d-b3b5ecfac516"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=538&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,111,961,962,964,966",
+    "length": "-1",
+    "title": "QVC PLUS",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "cb966082-5cb2-2faa-ba84-e511e88e6ca8"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=538&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,104,2741,2742",
+    "length": "-1",
+    "title": "Kabel Digital Info",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "b524ca6b-c794-5c9e-0663-80dd51d9076a",
+    "icon": "http://logos.xmltv.se/kabel1.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=538&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,109,1001,1002,1006",
+    "length": "-1",
+    "title": "ANIXE SD",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "ecb01ffb-6b1e-a808-e7f8-8d8119dfb4de",
+    "icon": "http://logos.xmltv.se/sd.anixehd.tv.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=538&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,112,2431,2432,2434",
+    "length": "-1",
+    "title": "SAT.1 Gold",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "8545d72c-0c11-c7ed-7898-191cba34242f",
+    "icon": "http://logos.xmltv.se/gold.sat1.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=538&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,101,2241,2242",
+    "length": "-1",
+    "title": "Astro TV",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "0417dcf9-6207-714f-a92a-298dfb15fe6d"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=610&bw=8&msys=dvbc&mtype=64qam&sr=6900&specinv=0&pids=0,16,17,18,20,102,1421,1422",
+    "length": "-1",
+    "title": "Welt der Wunder TV",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "4718dd04-147e-89d9-cda2-3055c86b263e",
+    "icon": "http://logos.xmltv.se/kinowelt.tv.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=626&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,102,6411,6412,6414,6416",
+    "length": "-1",
+    "title": "HSE24 EXTRA",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "c96cd606-2a48-c8c1-ad83-fe89255439cd"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=626&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,104,6431,6432,6433,6434",
+    "length": "-1",
+    "title": "ProSieben MAXX",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "acf019d2-9e14-d540-92a3-100ee30d930e",
+    "icon": "http://logos.xmltv.se/maxx.prosieben.de.png"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=626&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,108,6471,6472",
+    "length": "-1",
+    "title": "SONLife (eng)",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "83502f49-6151-0775-7fe1-f81bee00243e"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=626&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,109,6501,6502,6504",
+    "length": "-1",
+    "title": "Deutsches Musik Fernsehen",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "2aec4852-7282-32ec-1689-21b589e4db39"
+   },
+   {
+    "url": "rtsp://192.168.0.9:554/?freq=626&bw=8&msys=dvbc&mtype=256qam&sr=6900&specinv=0&pids=0,16,17,18,20,107,1201,1202",
+    "length": "-1",
+    "title": "DRF1",
+    "vlc": {
+     "network-caching": "1000"
+    },
+    "id": "8b719944-3107-0c1d-d837-20c5e8b760c4"
+   }
+  ],
+  "uuid": "663d5d6c-f9f8-4bb4-84d4-3431C48B3AB3",
+  "name": "192.168.0.9"
+ }
+]

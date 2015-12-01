@@ -10,18 +10,34 @@ var m = function(o) {
 }
 var getChannels = R.compose(
     R.map(m),
-    (o) => R.zip(R.keys(o), R.values(o)),
+    function(o) { return R.zip(R.keys(o), R.values(o)); },
     R.prop('channels'),
     R.prop('jsontv')
 );
 
-var extract = (e) => e.displayName;
+var extract = function(e) {
+  return e.displayName;
+};
+
+var search = function(q) {
+  return fuzzy
+    .filter(q, channels, {extract})
+    .map(R.prop('original'));
+};
+
+function searchR(q) {
+  if (q.length === 0) return [];
+  var result = search(q.join(' '));
+  if(result.length > 0) return result;
+  return searchR(q.slice(0, -1));
+}
 
 var germany = require('./channels/germany.json');
 var channels = getChannels(germany);
 
 function searchChannel(q) {
-  return fuzzy.filter(q, channels, {extract});
+  q = q.split(' ');
+  return searchR(q);
 }
 
 

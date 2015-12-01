@@ -15,6 +15,7 @@
     "morearty": "^0.7.25",
     "nw": "^0.12.3",
     "radium": "^0.15.3",
+    "ramda": "^0.18.0",
     "react": "^0.14.2",
     "react-fontawesome": "^0.3.3",
     "react-tap-event-plugin": "^0.2.1",

@@ -9,6 +9,7 @@ var Player = React.createClass({
   },
 
   componentDidMount: function() {
+    if(__ENV === 'browser') return;
     var node = this.getDOMNode();
     var canvas = document.createElement('canvas');
     canvas.id = 'rPlayer';
@@ -26,6 +27,7 @@ var Player = React.createClass({
   },
 
   render: function() {
+    if(__ENV === 'browser') return (<div></div>);
     console.log('renderPlayer');
     return (
       <div/>

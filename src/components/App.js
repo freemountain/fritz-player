@@ -1,9 +1,18 @@
 var React = require('react');
 var Morearty = require('morearty');
+var R = require('ramda');
 
 var Player = require('./Player');
 var Sidebar = require('./SideBar');
 var List = require('./List');
+var utils = require('./../node/utils');
+
+function getSources() {
+  if(__ENV === 'nw') return window.__req('./node/sources').get();
+  var defer = utils.defer();
+  defer.resolve(require('./../../sources.json'));
+  return defer.promise;
+};
 
 var App = React.createClass({
   mixins: [Morearty.Mixin],
@@ -21,6 +30,12 @@ var App = React.createClass({
       //ipc.send('set-fullscreen', changes.getCurrentValue());
     });
 
+    this.addBindingListener(binding, 'player', function (changes) {
+      // TODO: trigger nw fullscreen
+      console.log('pp', changes.getCurrentValue());
+      //ipc.send('set-fullscreen', changes.getCurrentValue());
+    });
+
     document.onmousemove = function(e) {
       if (e.pageX < 20 && !binding.get('sidebar.show'))
         return binding.set('sidebar.show', true);
@@ -34,18 +49,30 @@ var App = React.createClass({
       binding.set('dimensions.height', window.innerHeight);
     }
 
-    window.__req('./node/avmRepeater').getPlaylist(2000).then(function(playlist) {
-      console.log(3223, playlist);
-      binding.update('stations', (val) => val.merge(playlist));
-      binding.set('player.url', playlist[0].url);
+    getSources().then(function(sources) {
+      console.log('sss');
+      binding.set('sources', sources);
+      console.log('oo', sources[0].list[0]);
+      binding.set('player.url', sources[0].list[0].url);
       binding.set('player.play', true);
     });
   },
   render: function() {
     var binding = this.getDefaultBinding();
     var stationsBinding = binding.sub('stations');
+    var sourcesBinding = binding.sub('sources');
+    var sources = sourcesBinding.get();
 
-    var play = (i) => binding.set('player.url', stationsBinding.get(i).url);
+    var getSourceItem = (id) => R.compose(
+        R.filter( (item) => item.id === id),
+        R.reduce( (a, b) => a.concat(b), []),
+        R.map(R.prop('list'))
+    )(sources)[0];
+
+    var play = function(i) {
+      var item = getSourceItem(i);
+      binding.set('player.url', item.url);
+    };
 
     return (
       <div>

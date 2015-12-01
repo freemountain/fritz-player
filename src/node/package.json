@@ -5,6 +5,7 @@
     "fuzzy": "^0.1.1",
     "node-ssdp": "^2.6.3",
     "ramda": "^0.18.0",
+    "related-uuid": "^1.0.1",
     "request-promise": "^1.0.2",
     "wcjs-prebuilt": "^2.0.7"
   }
