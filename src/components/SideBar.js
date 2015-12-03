@@ -1,6 +1,6 @@
-var React = require('react');
-var ToggleDisplay = require('react-toggle-display');
-var Morearty = require('morearty');
+const React = require('react');
+const ToggleDisplay = require('react-toggle-display');
+const Morearty = require('morearty');
 
 var Bar = React.createClass({
   mixins: [Morearty.Mixin],

@@ -1,4 +1,4 @@
-var React = require('react');
+const React = require('react');
 
 var _player = null;
 
@@ -9,13 +9,12 @@ var Player = React.createClass({
   },
 
   componentDidMount: function() {
-    if(__ENV === 'browser') return;
     var node = this.getDOMNode();
     var canvas = document.createElement('canvas');
     canvas.id = 'rPlayer';
     node.appendChild(canvas);
 
-    var wjs = window.__req("./node/wcjs-renderer");
+    var wjs = this.props.modules.wjs;
     if(!_player) _player = wjs.init(canvas, ["--network-caching=500 -vvv"]);
   },
 
@@ -27,7 +26,6 @@ var Player = React.createClass({
   },
 
   render: function() {
-    if(__ENV === 'browser') return (<div></div>);
     console.log('renderPlayer');
     return (
       <div/>

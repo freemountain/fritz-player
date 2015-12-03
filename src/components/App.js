@@ -1,40 +1,17 @@
-var React = require('react');
-var Morearty = require('morearty');
-var R = require('ramda');
+const React = require('react');
+const Morearty = require('morearty');
+const R = require('ramda');
 
-var Player = require('./Player');
-var Sidebar = require('./SideBar');
-var List = require('./List');
-var utils = require('./../node/utils');
-
-function getSources() {
-  if(__ENV === 'nw') return window.__req('./node/sources').get();
-  var defer = utils.defer();
-  defer.resolve(require('./../../sources.json'));
-  return defer.promise;
-};
+const Player = require('./Player');
+const Sidebar = require('./SideBar');
+const List = require('./List');
+const utils = require('./../node/utils');
 
 var App = React.createClass({
   mixins: [Morearty.Mixin],
 
-  play: function(data) {
-    var binding = this.getDefaultBinding()
-    binding.set('player.url', data.url);
-  },
-
   componentDidMount: function() {
     var binding = this.getDefaultBinding();
-
-    this.addBindingListener(binding, 'fullscreen', function (changes) {
-      // TODO: trigger nw fullscreen
-      //ipc.send('set-fullscreen', changes.getCurrentValue());
-    });
-
-    this.addBindingListener(binding, 'player', function (changes) {
-      // TODO: trigger nw fullscreen
-      console.log('pp', changes.getCurrentValue());
-      //ipc.send('set-fullscreen', changes.getCurrentValue());
-    });
 
     document.onmousemove = function(e) {
       if (e.pageX < 20 && !binding.get('sidebar.show'))
@@ -49,24 +26,23 @@ var App = React.createClass({
       binding.set('dimensions.height', window.innerHeight);
     }
 
-    getSources().then(function(sources) {
-      console.log('sss');
+    this.props.modules.sources.get().then(function(sources) {
       binding.set('sources', sources);
-      console.log('oo', sources[0].list[0]);
-      binding.set('player.url', sources[0].list[0].url);
+      if(!sources[0]) return;
+      binding.set('player.url', sources[0].items[0].url);
       binding.set('player.play', true);
     });
   },
+
   render: function() {
     var binding = this.getDefaultBinding();
-    var stationsBinding = binding.sub('stations');
     var sourcesBinding = binding.sub('sources');
     var sources = sourcesBinding.get();
 
     var getSourceItem = (id) => R.compose(
         R.filter( (item) => item.id === id),
         R.reduce( (a, b) => a.concat(b), []),
-        R.map(R.prop('list'))
+        R.map(R.prop('items'))
     )(sources)[0];
 
     var play = function(i) {
@@ -79,7 +55,11 @@ var App = React.createClass({
       <Sidebar binding={binding} >
         <List binding={ binding } onItemClick= { play }/>
       </Sidebar>
-      <Player url={binding.get('player.url')} play={binding.get('player.play')}/>
+      <Player
+        url={binding.get('player.url')}
+        play={binding.get('player.play')}
+        modules={this.props.modules}
+      />
       </div>
     );
   }

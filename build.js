@@ -8,19 +8,22 @@ var envVar = {
     'NW_VERSION': '0.12.3',
     'NW_PLATFORM': 'win64',
     'WCJS_PLATFORM':'win',
-    'WCJS_ARCH':'x64'
+    'WCJS_ARCH':'x64',
+    'WCJS_RUNTIME': 'electron'
   },
   osx: {
     'NW_VERSION': '0.12.3',
     'NW_PLATFORM': 'osx64',
     'WCJS_PLATFORM':'osx',
-    'WCJS_ARCH':'x64'
+    'WCJS_ARCH':'x64',
+    'WCJS_RUNTIME': 'electron'
   },
   linux: {
     'NW_VERSION': '0.12.3',
     'NW_PLATFORM': 'linux64',
     'WCJS_PLATFORM':'linux',
     'WCJS_ARCH':'x64'
+    'WCJS_RUNTIME': 'electron'
   }
 }
 

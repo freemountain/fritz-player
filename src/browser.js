@@ -8,9 +8,7 @@ var Morearty = require('morearty');
 
 var App = require('./components/App');
 
-module.exports = function(_require) {
-  window.__req = _require;
-
+module.exports = function(modules) {
   var ctx = Morearty.createContext({
     initialState: {
       sources: [],
@@ -31,12 +29,11 @@ module.exports = function(_require) {
     }
   });
 
-
   var Bootstrap = ctx.bootstrap(App);
   var element = document.getElementById('content');
 
   return ReactDOM.render(
-    <Bootstrap />,
+    <Bootstrap modules={modules} />,
     element
   );
 };

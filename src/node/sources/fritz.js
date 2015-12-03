@@ -15,24 +15,26 @@ var parseUSN = function(s) {
 };
 
 
-function find(t) {
+function findBox(t) {
   var client = new Client();
   var defered = utils.defer();
 
+
   var timer = setTimeout(function() {
-    defered.reject();
+    defered.reject('No box found!');
   }, t);
 
   client.on('response', function (headers, statusCode, rinfo) {
     client._stop();
     clearTimeout(timer);
 
-    var uuid = parseUSN(headers.USN)
-    var name = url.parse(headers.LOCATION).hostname;
+    var uuid = parseUSN(headers.USN);
+    var _url = url.parse(headers.LOCATION);
 
     defered.resolve({
       uuid,
-      name
+      name: headers.SERVER.slice(0,20),
+      url: _url
     });
   });
 
@@ -41,12 +43,12 @@ function find(t) {
   return defered.promise;
 }
 
-function getPlaylist(t) {
-  var host;
-  return find(t)
-    .then(function(h) {
-      host = h
-      var url = 'http://' + host.name + '/dvb/m3u/';
+function getSources(t) {
+  var box;
+  return findBox(t)
+    .then(function(b) {
+      box = b;
+      var url = 'http://' + box.url.hostname + '/dvb/m3u/';
       return Promise.all([
         request(url + 'tvhd.m3u'),
         request(url + 'tvsd.m3u')
@@ -57,17 +59,20 @@ function getPlaylist(t) {
         .concat(parse(res[0]))
         .concat(parse(res[1]));
       return [{
-        list,
-        uuid : host.uuid,
-        name : host.name
+        items: list,
+        id : box.uuid,
+        name : box.name,
+        info: {
+          url: box.url.href
+        }
       }];
     });
 }
 
 var f = function() {
-  return getPlaylist(2000).then(function(result) {
+  return getSources(2000).then(function(result) {
     return result.map(function(source) {
-      source.list =  source.list.map(map(source.uuid));
+      source.items =  source.items.map(map(source.uuid));
       return source;
     });
   });

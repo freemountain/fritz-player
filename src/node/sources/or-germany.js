@@ -3,9 +3,9 @@ var relatedUUID = require('related-uuid');
 
 var uuid = 'bc22b9a1-28f9-b593-9979-daa39d4ccb7d';
 var source = {
-  uuid: uuid,
+  id: uuid,
   name: 'OR Germany',
-  list: [
+  items: [
     {
       "url": "http://daserste_live-lh.akamaihd.net/i/daserste_de@91204/master.m3u8",
       "length": "-1",
@@ -28,6 +28,10 @@ var source = {
 }
 module.exports = function() {
   var defer = utils.defer();
-  defer.resolve([source]);
+  defer.resolve([source, {
+    id: 'dfdssdfdfs',
+    name: 'hans',
+    items: []
+  }]);
   return defer.promise;
 };
