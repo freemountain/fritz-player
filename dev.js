@@ -34,7 +34,7 @@ function sync(src, dest, init) {
 }
 
 var watcher = new Watcher();
-var start = true;
+var start = false;
 
 var b = browserify({
   debug: true,

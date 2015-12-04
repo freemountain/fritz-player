@@ -18,9 +18,22 @@
   <div id="content"></div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
+      var ipc = require('electron').ipcRenderer;
+      var EventEmitter = require('./node/EventEmitter');
+      var events = new EventEmitter();
+
+      events._onEmit = function(event, arg) {
+        ipc.send('backend', {event, arg});
+      };
+
+      ipc.on('backend', function(event, arg) {
+        events.inject(arg.event, arg.arg);
+      });
+
       var modules = {
         wjs : require('./node/wcjs-renderer'),
-        sources : require('./node/sources')
+        sources : require('./node/sources'),
+        backend: events
       }
       app(modules);
     }, false);

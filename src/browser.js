@@ -9,6 +9,9 @@ var Morearty = require('morearty');
 var App = require('./components/App');
 
 module.exports = function(modules) {
+  var backend = modules.backend;
+  backend.on('sources', (r) => console.log(r));
+  backend.emit('send');
   var ctx = Morearty.createContext({
     initialState: {
       sources: [],
