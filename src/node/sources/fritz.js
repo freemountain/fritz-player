@@ -5,6 +5,9 @@ var parse = require('./../m3uParser');
 var request = require('request-promise');
 var xmltv = require('./../xmltv');
 var R = require("ramda");
+
+const Types = require('./../types/Source');
+
 var relatedUUID = require('related-uuid');
 
 //BSP: uuid:663d5d6c-f9f8-4bb4-84d4-3431C48B3AB3::urn:ses-com:service:satip:1
@@ -13,7 +16,6 @@ var parseUSN = function(s) {
     .split('::')[0]
     .split(':')[1];
 };
-
 
 function findBox(t) {
   var client = new Client();
@@ -69,34 +71,26 @@ function getSources(t) {
     });
 }
 
-var f = function() {
-  return getSources(2000).then(function(result) {
-    return result.map(function(source) {
-      source.items =  source.items.map(map(source.uuid));
-      return source;
-    });
+function parseSource(source) {
+  source.items =  source.items.map(parseItem(source.uuid));
+  return Types.Source(source);
+}
+
+var parseItem = R.curry(function(sourceId, item) {
+  var data = xmltv(item.title);
+
+  var result = Types.MediaItem({
+    id: relatedUUID(sourceId, item.title),
+    url: item.url,
+    title: item.title,
+    vlc: item.vlc,
+    icon: (data[0] && data[0].icon) ? data[0].icon : undefined
   });
-};
 
-module.exports = f;
-
-var filter = function(s) {
-  return /\w|\s/g.test(s);
-};
-
-var normalize = function(s) {
-  return s
-    .toLowerCase()
-    .split(/[_\s, -./\\]+/)
-    //.filter(filter)
-    .join(' ');
-};
-
-var map = R.curry(function(sourceId, item) {
-  var q = normalize(item.title);
-  var data = xmltv.searchChannel(q);
-  item.id = relatedUUID(sourceId, item.title);
-  if(data.length === 0) return item;
-  if(data[0].icon) item.icon = data[0].icon;
-  return item;
+  return result;
 });
+
+module.exports = function() {
+  return getSources(2000)
+    .then( (result) => result.map(parseSource) );
+};

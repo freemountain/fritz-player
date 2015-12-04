@@ -55,9 +55,11 @@ b.on('update', bundle)
 });
 
 mkdir('-p', 'out/dev/');
+
 sync('nw_package.json', 'out/dev/package.json');
 sync('src/index.html', 'out/dev/index.html');
 sync('src/electron.js', 'out/dev/electron.js');
+sync('src/backend.js', 'out/dev/backend.js');
 
 ln('-sf', __dirname + '/src/node', 'out/dev/node');
 

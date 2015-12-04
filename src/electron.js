@@ -3,7 +3,7 @@ var BrowserWindow = require('browser-window');
 var ipc = require('electron').ipcMain;
 
 var mainWindow = null;
-
+console.log('\n\n\n\nhuhu\n\n\n\n');
 app.on('ready', function() {
 
   ipc.on('set-fullscreen', function(e, f) {

@@ -37,3 +37,5 @@ module.exports = function(modules) {
     element
   );
 };
+
+module.exports._require = require;

@@ -4,7 +4,6 @@ const R = require('ramda');
 
 const List = require('material-ui/lib/lists/list');
 const ListItem = require('material-ui/lib/lists/list-item');
-const Paper = require('material-ui/lib/paper');
 const Avatar = require('material-ui/lib/avatar');
 const Colors = require('material-ui/lib/styles/colors');
 
@@ -46,7 +45,7 @@ function createSubList(source, nestedItems) {
   return <ListItem
     key={source.id}
     primaryText={source.name}
-    initiallyOpen={true}
+    initiallyOpen={false}
     leftAvatar={<Avatar>A</Avatar>}
     nestedItems={nestedItems}
   />;
@@ -66,30 +65,24 @@ var Bar = React.createClass({
 
     var sources = sourcesBinding.get().map(function(source) {
       var nested = source.items
+        .slice() // copy, because source is immutable
         .sort(itemCompare)
         .map(_createListItem);
 
       return createSubList(source, nested);
     });
 
-    //https://css-tricks.com/centering-percentage-widthheight-elements/
-    var style = {
-      position:'absolute',
-      transform: 'translate(0, -50%)',
-      width: 300,
-      height: '94%',
-      left: '2%',
-      top: '50%',
-      overflow:'scroll'
-    };
+    var style= {
+      height: '100%',
+      overflow:'scroll',
+      //paddingBottom: '60px',
+    }
 
 
     return (
-      <Paper zDepth={3} style={style}>
-        <List>
-          { sources }
-        </List>
-      </Paper>
+      <List style={style}>
+        { sources }
+      </List>
     );
   }
 });

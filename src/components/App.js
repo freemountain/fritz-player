@@ -3,7 +3,8 @@ const Morearty = require('morearty');
 const R = require('ramda');
 
 const Player = require('./Player');
-const Sidebar = require('./SideBar');
+const Panel = require('./Panel');
+const ControlBar = require('./ControlBar');
 const List = require('./List');
 const utils = require('./../node/utils');
 
@@ -29,6 +30,8 @@ var App = React.createClass({
     this.props.modules.sources.get().then(function(sources) {
       binding.set('sources', sources);
       if(!sources[0]) return;
+      console.log(sources[0]);
+
       binding.set('player.url', sources[0].items[0].url);
       binding.set('player.play', true);
     });
@@ -52,9 +55,20 @@ var App = React.createClass({
 
     return (
       <div>
-      <Sidebar binding={binding} >
+      <Panel show={binding.get('sidebar.show')}>
         <List binding={ binding } onItemClick= { play }/>
-      </Sidebar>
+      </Panel>
+
+      <Panel show={binding.get('sidebar.show')} style={{
+        position:'absolute',
+        //transform: 'translate(-100%, 80%)',
+        width: '60%',
+        height: '10%',
+        top: '89%',
+        left: '39%',
+      }}>
+        <ControlBar binding={ binding } />
+      </Panel>
       <Player
         url={binding.get('player.url')}
         play={binding.get('player.play')}

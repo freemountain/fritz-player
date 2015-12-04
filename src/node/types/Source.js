@@ -9,6 +9,7 @@ var MediaItem = t.struct({
   url: URL,
   id: ID,
   title: t.String,
+  icon: t.maybe(t.String),
   vlc: t.maybe(StringDict)
 });
 
@@ -25,12 +26,3 @@ module.exports = {
   MediaItem: MediaItem,
   Source: Source
 };
-
-
-var list = require('./../sources/or-germany.js');
-
-list().then(function(l) {
-  console.log(l);
-
-  var list = Source(l[0]);
-}).catch((e)=>console.log(e.stack));
