@@ -5,7 +5,7 @@ const R = require('ramda');
 const List = require('material-ui/lib/lists/list');
 const ListItem = require('material-ui/lib/lists/list-item');
 const Avatar = require('material-ui/lib/avatar');
-const Colors = require('material-ui/lib/styles/colors');
+// const Colors = require('material-ui/lib/styles/colors');
 
 function stringCompare(a, b) {
   if(a < b) return -1;
@@ -25,10 +25,10 @@ function createAvatar(item) {
 
   var title = item.title
     .split(/[\s, -./\\]+/)
-    .slice(0,2)
-    .map( (s) => s[0].toUpperCase() );
+    .slice(0, 2)
+    .map((s) => s[0].toUpperCase());
 
-  return <Avatar>{title}</Avatar>
+  return (<Avatar>{title}</Avatar>);
 }
 
 function createListItem(clickHandler, item) {
@@ -56,11 +56,10 @@ var Bar = React.createClass({
 
   render: function() {
     var binding = this.getDefaultBinding();
-    var stationsBinding = binding.sub('stations');
     var sourcesBinding = binding.sub('sources');
 
     var onClick = this.props.onItemClick;
-    var clickHandler = onClick ? (i) => onClick(i) : () => true;
+    // var clickHandler = onClick ? (i) => onClick(i) : () => true;
     var _createListItem = R.curry(createListItem)(onClick);
 
     var sources = sourcesBinding.get().map(function(source) {
@@ -72,12 +71,11 @@ var Bar = React.createClass({
       return createSubList(source, nested);
     });
 
-    var style= {
+    var style = {
       height: '100%',
-      overflow:'scroll',
-      //paddingBottom: '60px',
-    }
-
+      overflow: 'scroll'
+      // paddingBottom: '60px',
+    };
 
     return (
       <List style={style}>

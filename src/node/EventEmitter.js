@@ -11,9 +11,9 @@ EventEmitter.prototype.on = function() {
 };
 
 EventEmitter.prototype.emit = function(event, arg) {
-    this._emiter.emit(event, arg);
-    if(!this._onEmit) return;
-    this._onEmit(event, arg);
+  this._emiter.emit(event, arg);
+  if(!this._onEmit) return;
+  this._onEmit(event, arg);
 };
 
 EventEmitter.prototype.inject = function(event, arg) {

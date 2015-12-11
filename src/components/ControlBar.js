@@ -18,14 +18,14 @@ var ControlBar = React.createClass({
       height: '100%',
       display: 'flex',
       flexDirection: 'row',
-      flexGrow: '0',
+      flexGrow: '0'
     };
 
     var sliderContainer = {
       float: 'right',
       height: '100%',
       display: 'flex',
-      flexGrow: '1',
+      flexGrow: '1'
     };
 
     var container = {
@@ -36,7 +36,7 @@ var ControlBar = React.createClass({
       display: 'flex',
       flexBasis: '10px',
       marginRight: '3%',
-      flexGrow: '0',
+      flexGrow: '0'
     };
 
     var toggle = () => binding.set('player.play', !binding.get('player.play'));

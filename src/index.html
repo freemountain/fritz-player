@@ -17,23 +17,21 @@
 
   <div id="content"></div>
   <script>
+    var Rx = require('rx');
+    var utils = require('./node/utils');
+    var rxList = require('./node/rx-list');
+
     document.addEventListener('DOMContentLoaded', function(){
       var ipc = require('electron').ipcRenderer;
-      var EventEmitter = require('./node/EventEmitter');
-      var events = new EventEmitter();
-
-      events._onEmit = function(event, arg) {
-        ipc.send('backend', {event, arg});
-      };
-
-      ipc.on('backend', function(event, arg) {
-        events.inject(arg.event, arg.arg);
-      });
+      var backendIpc = utils.getIpcSubject('backend', ipc);
 
       var modules = {
         wjs : require('./node/wcjs-renderer'),
         sources : require('./node/sources'),
-        backend: events
+        backend: {
+          sources: rxList(backendIpc, 'sources', 'map'),
+          items: rxList(backendIpc, 'items', 'map')
+        }
       }
       app(modules);
     }, false);

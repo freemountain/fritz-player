@@ -1,10 +1,9 @@
-var R = require("ramda");
+var R = require('ramda');
 
 var sources = {};
 
 sources.fritz = require('./fritz');
 sources.or = require('./or-germany');
-
 
 function get() {
   var r = R.values(sources).map(function(f) {
@@ -12,14 +11,14 @@ function get() {
       .catch(function(e) {
         console.log('GET Sources error: ', e);
         return [];
-      })
+      });
   });
 
   return Promise.all(r).then(function(result) {
     var concat = function(a, r) {
       return a.concat(r);
     };
-    var r =  R.reduce(concat, [], result);
+    var r = R.reduce(concat, [], result);
     return r;
   }).catch(function(e) {
 
@@ -29,8 +28,3 @@ function get() {
 module.exports = {
   get: get
 };
-
-
-/*get().then(function(r) {
-  console.log(JSON.stringify(r, null, ' '));
-});*/

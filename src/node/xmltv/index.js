@@ -1,10 +1,10 @@
 var fuzzy = require('fuzzy');
-var R = require("ramda");
+var R = require('ramda');
 
 var germany = require('./channels/germany.json');
 
 function search(q) {
-  if (q.length === 0) return [];
+  if(q.length === 0) return [];
   var extract = (e) => e.displayName;
   var result = fuzzy
     .filter(q.join(' '), channels, {extract})
@@ -26,7 +26,7 @@ function parse(channel, key) {
     id: key,
     displayName: channel.displayName.sv,
     icon: channel.icon
-  }
+  };
 }
 
 var getChannels = R.compose(
@@ -40,10 +40,9 @@ var channels = getChannels(germany);
 
 function searchChannel(q) {
   q = normalize(q);
-  var result =  search(q);
+  var result = search(q);
 
   return result;
 }
-
 
 module.exports = searchChannel;

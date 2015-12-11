@@ -1,5 +1,3 @@
-var fs = require('fs');
-
 function parseItem(i) {
   var result = {};
 
@@ -10,7 +8,7 @@ function parseItem(i) {
   }
 
   function parseVLC(l) {
-    if (!result.vlc) result.vlc = {};
+    if(!result.vlc) result.vlc = {};
     var token = l.slice(11).split('=');
     result.vlc[token[0]] = token[1];
   }

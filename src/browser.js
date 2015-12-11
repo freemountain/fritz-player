@@ -1,17 +1,15 @@
-//material-ui needs this
-var injectTapEventPlugin = require("react-tap-event-plugin");
+// material-ui needs this
+var injectTapEventPlugin = require('react-tap-event-plugin');
 injectTapEventPlugin();
-
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Morearty = require('morearty');
 
 var App = require('./components/App');
+var Types = require('./node/types');
 
 module.exports = function(modules) {
-  var backend = modules.backend;
-  backend.on('sources', (r) => console.log(r));
-  backend.emit('send');
+
   var ctx = Morearty.createContext({
     initialState: {
       sources: [],
@@ -28,7 +26,7 @@ module.exports = function(modules) {
         width: window.innerWidth,
         height: window.innerHeight
       },
-      fullscreen: false,
+      fullscreen: false
     }
   });
 

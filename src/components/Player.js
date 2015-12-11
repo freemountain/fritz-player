@@ -15,7 +15,7 @@ var Player = React.createClass({
     node.appendChild(canvas);
 
     var wjs = this.props.modules.wjs;
-    if(!_player) _player = wjs.init(canvas, ["--network-caching=500 -vvv"]);
+    if(!_player) _player = wjs.init(canvas, ['--network-caching=500 -vvv']);
   },
 
   componentWillReceiveProps: function(nextProps, o) {

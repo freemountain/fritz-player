@@ -3,7 +3,6 @@ const React = require('react');
 const FlatButton = require('material-ui/lib/flat-button');
 const FontIcon = require('material-ui/lib/font-icon');
 
-
 var PlayButton = React.createClass({
   render: function() {
     var pressed = this.props.pressed;

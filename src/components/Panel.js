@@ -1,22 +1,19 @@
 const React = require('react');
-const Morearty = require('morearty');
 
 const ToggleDisplay = require('react-toggle-display');
 const Paper = require('material-ui/lib/paper');
 
 var Panel = React.createClass({
-
   render: function() {
-
-    //https://css-tricks.com/centering-percentage-widthheight-elements/
+    // https://css-tricks.com/centering-percentage-widthheight-elements/
     var style = {
-      position:'absolute',
-      //transform: 'translate(0, -50%)',
+      position: 'absolute',
+      // transform: 'translate(0, -50%)',
       width: '37%',
       height: '97%',
       left: '0%',
       top: '0%',
-      margin: '1%',
+      margin: '1%'
     };
 
     return (

@@ -4,13 +4,13 @@ var url = require('url');
 var parse = require('./../m3uParser');
 var request = require('request-promise');
 var xmltv = require('./../xmltv');
-var R = require("ramda");
+var R = require('ramda');
 
-const Types = require('./../types/Source');
+const Types = require('./../types');
 
 var relatedUUID = require('related-uuid');
 
-//BSP: uuid:663d5d6c-f9f8-4bb4-84d4-3431C48B3AB3::urn:ses-com:service:satip:1
+// BSP: uuid:663d5d6c-f9f8-4bb4-84d4-3431C48B3AB3::urn:ses-com:service:satip:1
 var parseUSN = function(s) {
   return s
     .split('::')[0]
@@ -21,12 +21,11 @@ function findBox(t) {
   var client = new Client();
   var defered = utils.defer();
 
-
   var timer = setTimeout(function() {
     defered.reject('No box found!');
   }, t);
 
-  client.on('response', function (headers, statusCode, rinfo) {
+  client.on('response', function(headers, statusCode, rinfo) {
     client._stop();
     clearTimeout(timer);
 
@@ -35,7 +34,7 @@ function findBox(t) {
 
     defered.resolve({
       uuid,
-      name: headers.SERVER.slice(0,20),
+      name: headers.SERVER.slice(0, 20),
       url: _url
     });
   });
@@ -57,13 +56,13 @@ function getSources(t) {
       ]);
     })
     .then(function(res) {
-      var list =  []
+      var list = []
         .concat(parse(res[0]))
         .concat(parse(res[1]));
       return [{
         items: list,
-        id : box.uuid,
-        name : box.name,
+        id: box.uuid,
+        name: box.name,
         info: {
           url: box.url.href
         }
@@ -72,7 +71,7 @@ function getSources(t) {
 }
 
 function parseSource(source) {
-  source.items =  source.items.map(parseItem(source.uuid));
+  source.items = source.items.map(parseItem(source.uuid));
   return Types.Source(source);
 }
 
@@ -92,5 +91,5 @@ var parseItem = R.curry(function(sourceId, item) {
 
 module.exports = function() {
   return getSources(2000)
-    .then( (result) => result.map(parseSource) );
+    .then((result) => result.map(parseSource));
 };
