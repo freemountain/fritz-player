@@ -22,7 +22,7 @@ var envVar = {
     'NW_VERSION': '0.12.3',
     'NW_PLATFORM': 'linux64',
     'WCJS_PLATFORM':'linux',
-    'WCJS_ARCH':'x64'
+    'WCJS_ARCH':'x64',
     'WCJS_RUNTIME': 'electron'
   }
 }
