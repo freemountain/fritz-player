@@ -1,12 +1,16 @@
-const React = require('react');
+import React from 'react';
+import ToggleDisplay from 'react-toggle-display';
+import { Paper } from 'material-ui';
 
-const ToggleDisplay = require('react-toggle-display');
-const Paper = require('material-ui/lib/paper');
-
-var Panel = React.createClass({
-  render: function() {
+const Panel = React.createClass({
+  propTypes: {
+    show: React.PropTypes.bool,
+    style: React.PropTypes.object,
+    children: React.PropTypes.element.isRequired
+  },
+  render () {
     // https://css-tricks.com/centering-percentage-widthheight-elements/
-    var style = {
+    const style = {
       position: 'absolute',
       // transform: 'translate(0, -50%)',
       width: '37%',
@@ -17,7 +21,7 @@ var Panel = React.createClass({
     };
 
     return (
-      <div >
+      <div style={{zIndex: 10}}>
         <ToggleDisplay show={this.props.show}>
           <Paper zDepth={3} style={this.props.style || style}>
             {this.props.children}
@@ -28,4 +32,4 @@ var Panel = React.createClass({
   }
 });
 
-module.exports = Panel;
+export default Panel;

@@ -1,13 +1,12 @@
-var utils = require('./../utils');
-var relatedUUID = require('related-uuid');
-var xmltv = require('./../xmltv');
+import utils from './../utils';
+import relatedUUID from 'related-uuid';
+import xmltv from './../xmltv';
+import Types from './../types';
 
-const Types = require('./../types');
+const id = 'foo-bar-b593-9979-daa39s8jcb7d';
+const name = 'OR Germany';
 
-var id = 'foo-bar-b593-9979-daa39s8jcb7d';
-var name = 'OR Germany';
-
-var items = [
+const items = [
   {
     'url': 'http://daserste_live-lh.akamaihd.net/i/daserste_de@91204/master.m3u8',
     'title': 'Das Erste',
@@ -25,21 +24,21 @@ var items = [
   }
 ];
 
-module.exports = function() {
-  var defer = utils.defer();
-  var source = {
+export default () => {
+  const defer = utils.defer();
+  const source = {
     id,
     name,
-    items: items.map(function(item) {
-      var data = xmltv(item.title);
-      var icon = (data[0]) ? data[0].icon : undefined;
+    items: items.map(item => {
+      const data = xmltv(item.title);
+      const icon = (data[0]) ? data[0].icon : undefined;
 
-      var result = Types.MediaItem({
+      const result = Types.MediaItem({
         id: item.id,
         url: item.url,
         title: item.title,
         vlc: item.vlc,
-        icon: icon
+        icon
       });
 
       return result;

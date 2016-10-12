@@ -1,27 +1,26 @@
-var fuzzy = require('fuzzy');
-var R = require('ramda');
+import fuzzy from 'fuzzy';
+import R from 'ramda';
+import germany from './channels/germany.js';
 
-var germany = require('./channels/germany.json');
-
-function search(q) {
-  if(q.length === 0) return [];
-  var extract = (e) => e.displayName;
-  var result = fuzzy
+function search (q) {
+  if (q.length === 0) return [];
+  const extract = (e) => e.displayName;
+  const result = fuzzy
     .filter(q.join(' '), channels, {extract})
     .map(R.prop('original'));
 
-  if(result.length > 0) return result;
+  if (result.length > 0) return result;
 
   return search(q.slice(0, -1));
 }
 
-function normalize(s) {
+function normalize (s) {
   return s
     .toLowerCase()
     .split(/[_\s, -./\\]+/);
 }
 
-function parse(channel, key) {
+function parse (channel, key) {
   return {
     id: key,
     displayName: channel.displayName.sv,
@@ -29,7 +28,7 @@ function parse(channel, key) {
   };
 }
 
-var getChannels = R.compose(
+const getChannels = R.compose(
     R.values,
     R.mapObjIndexed(parse),
     R.prop('channels'),
@@ -38,11 +37,11 @@ var getChannels = R.compose(
 
 var channels = getChannels(germany);
 
-function searchChannel(q) {
+function searchChannel (q) {
   q = normalize(q);
-  var result = search(q);
+  const result = search(q);
 
   return result;
 }
 
-module.exports = searchChannel;
+export default searchChannel;

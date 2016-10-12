@@ -1,84 +1,116 @@
 #!/usr/bin/env node
+
 require('shelljs/global');
-var program = require('commander');
+config.verbose = true;
+const spawn = require('child-process-promise').spawn;
+const path = require('path');
+const packager = require('electron-packager');
 
-var legalPlatforms = ['osx', 'linux', 'win'];
-var envVar = {
-  win: {
-    'NW_VERSION': '0.12.3',
-    'NW_PLATFORM': 'win64',
-    'WCJS_PLATFORM':'win',
-    'WCJS_ARCH':'x64',
-    'WCJS_RUNTIME': 'electron'
-  },
-  osx: {
-    'NW_VERSION': '0.12.3',
-    'NW_PLATFORM': 'osx64',
-    'WCJS_PLATFORM':'osx',
-    'WCJS_ARCH':'x64',
-    'WCJS_RUNTIME': 'electron'
-  },
-  linux: {
-    'NW_VERSION': '0.12.3',
-    'NW_PLATFORM': 'linux64',
-    'WCJS_PLATFORM':'linux',
-    'WCJS_ARCH':'x64',
-    'WCJS_RUNTIME': 'electron'
-  }
+function run (cmd, arg) {
+  let _arg = arg || [];
+
+  if (typeof arg === 'string') _arg = [arg];
+
+  const promise = spawn(cmd, _arg);
+  const child = promise.childProcess;
+
+  child.stdout.pipe(process.stdout);
+  child.stderr.pipe(process.stderr);
+
+  return promise;
 }
 
-var getVar = (v) => envVar[platform][v];
-var getEnv = (v) => v + '=' + getVar(v);
+function runBackground (cmd, arg) {
+  run(cmd, arg);
 
-function die(msg) {
-  console.log('PANIC: ', msg);
-  exit(-1);
+  return new Promise(resolve => resolve());
 }
 
-function sync(target, destination, exclude) {
-  exclude = exclude || ['node_modules'];
-  var toClean = ls(destination).filter((f) => exclude.indexOf(f) === -1 );
-  toClean.forEach((f) => rm('-r', destination + f));
-  cp('-R', target, destination);
+function npmInstall (dir) {
+  pushd(dir);
+
+  return run('npm', 'install').then(() => popd());
 }
 
-program
-  .version('0.0.1')
-  .option('-P, --pack', 'pack step')
-  .option('-p, --platform [p]', 'dd')
-  .option('-f, --force', 'false')
-  .parse(process.argv);
+function setUp (dir) {
+  mkdir(dir);
 
-var platform = process.platform;
-var force = program.force || false;
-var packStep = program.pack || false;
+  cp('src/index.html', path.join(dir, 'index.html'));
+  cp('src/package.json', path.join(dir, 'package.json'));
 
-if(program.platform) platform = program.platform;
-if(platform === 'darwin') platform = 'osx';
+  return new Promise(resolve => resolve());
+}
 
-if(legalPlatforms.indexOf(platform) === -1)
-  die('platform "' + platform + '" not supported');
+function transpileSrc (input, output, watch) {
+  const cmd = 'node_modules/.bin/babel';
+  const arg = ['--plugins', 'transform-react-jsx',
+  '--presets', 'es2015-node6',
+  '--ignore', 'node_modules',
+  '--source-maps', 'true',
+  '--out-dir', output];
 
-console.log('Platform: ', platform);
-console.log('Force: ', force);
+  return run(cmd, arg.concat(input))
+    .then(() => {
+      if (watch === true) return runBackground(cmd, arg.concat(['--watch', input]));
+    });
+}
 
-mkdir('-p', 'out/work/node');
+function runElectron (dir) {
+  return run('node_modules/.bin/electron', dir)
+    .then(() => process.exit(0));
+}
 
-rm('out/work/package.json');
-rm('out/work/index.html');
-cp('nw_package.json', 'out/work/package.json');
-cp('src/index.html', 'out/work/index.html');
+function copyDir (src, dest, force) {
+  if (test('-d', dest) && !force) return new Promise(resolve => resolve());
 
-sync('src/node/*', 'out/work/node');
-cd('out/work/node');
+  rm('-rf', dest);
 
-if (force) rm('-rf', 'node_modules');
-exec(getEnv('WCJS_ARCH') + ' ' + getEnv('WCJS_PLATFORM') + ' npm install');
-cd('../../../');
+  cp('-R', src, dest);
 
-console.log('build browser bundle...');
-exec('./node_modules/.bin/browserify src/browser.js -t babelify --s app --outfile out/work/bundle.js');
+  return new Promise(resolve => resolve());
+}
 
-if(!packStep) exit();
-console.log('build app bundle...');
-exec('./node_modules/.bin/nwbuild -v ' + getVar('NW_VERSION') + ' -p ' + getVar('NW_PLATFORM') + ' -o out out/work');
+function packApp () {
+  const options = {
+    dir: './build',
+    name: 'fritz',
+    platform: 'darwin',
+    arch: 'x64',
+    out: './releases/',
+    overwrite: true,
+    prune: false,
+    asar: false,
+    version: '1.4.0'
+  };
+
+  return new Promise((resolve, reject) => {
+    packager(options, function (err, appPaths) {
+      if (err) return reject(err);
+
+      resolve(appPaths);
+    });
+  });
+}
+
+if (process.argv[2] === 'dev') {
+  setUp('build')
+    .then(() => copyDir('node_modules/wcjs-prebuilt/bin/', 'build/wcjs'))
+    .then(() => npmInstall('build'))
+    .then(() => transpileSrc('src', 'build', true))
+    .then(() => runElectron('build'))
+    .catch(e => console.error(e));
+}
+
+if (process.argv[2] === 'build') {
+  setUp('build')
+    .then(() => npmInstall('build'))
+    .then(() => transpileSrc('src', 'build'))
+    .then(() => packApp())
+    .then((out) => {
+      if (process.platform !== 'darwin') return;
+
+      const dest = path.join(__dirname, out[0], 'fritz.app/Contents/Resources/app/wcjs/');
+      return copyDir('node_modules/wcjs-prebuilt/bin/', dest, true);
+    })
+    .catch(e => console.error(e));
+}

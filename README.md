@@ -18,21 +18,17 @@ Erkennt eine `FRITZ!WLAN Repeater DVB-C` Box im Netzwerk und zeigt die verfügba
 ### Quelltext
 ```
 npm install
-npm run build
 npm start
 ```
 
 ### Binaries
-* Unter Github [Release](https://github.com/freemountain/fritz-player/releases/tag/v0.0.1)
+* Unter Github [Release](https://github.com/freemountain/fritz-player/releases/tag/v0.0.2)
 * OSX funktioniert
-* Linux
-  * libvlc muss vorhanden sein
-  * startet, mehr wurde nicht getestet, da kein WebGL in VM
-* Windows noch nicht unterstützt
-
+* Linux und Windows noch nicht unterstützt
 
 ## Release History
 * 0.0.1 - init
+* 0.0.2 - update and refactor to es6
 
 
 ## License

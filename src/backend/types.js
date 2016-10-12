@@ -1,11 +1,11 @@
-var t = require('tcomb');
+import t from 'tcomb';
 
-var URL = t.String;
-var ID = t.String;
+const URL = t.String;
+const ID = t.String;
 
-var StringDict = t.dict(t.String, t.String);
+const StringDict = t.dict(t.String, t.String);
 
-var MediaItem = t.struct({
+const MediaItem = t.struct({
   url: URL,
   id: ID,
   title: t.String,
@@ -13,43 +13,43 @@ var MediaItem = t.struct({
   vlc: t.maybe(StringDict)
 });
 
-var Source = t.struct({
+const Source = t.struct({
   name: t.String,
   id: ID,
   items: t.list(MediaItem),
   info: t.maybe(StringDict)
 });
 
-var AddEvent = t.struct({
+const AddEvent = t.struct({
   type: t.subtype(t.String, (s) => s === 'ADD'),
   targets: t.list(Source)
 });
 
-var RemoveEvent = t.struct({
+const RemoveEvent = t.struct({
   type: t.subtype(t.String, (s) => s === 'REMOVE'),
   targets: t.list(t.String)
 });
 
-var _Type = t.irreducible('Type', t.isType);
+const _Type = t.irreducible('Type', t.isType);
 
-var check = t.func([_Type, t.Any], t.Bool).of(function(type, x) {
+const check = t.func([_Type, t.Any], t.Bool).of((type, x) => {
   // if(type.meta.kin === 'irreducible') return type.is(x);
-  var result;
-  try{
+  let result;
+  try {
     type(x);
     result = true;
-  } catch(e) {
+  } catch (e) {
     result = false;
   }
   return result;
 });
 
-module.exports = {
+export default {
   check,
-  URL: URL,
-  StringDict: StringDict,
-  MediaItem: MediaItem,
-  Source: Source,
+  URL,
+  StringDict,
+  MediaItem,
+  Source,
   AddEvent,
   RemoveEvent
 };
