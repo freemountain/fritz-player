@@ -78,7 +78,7 @@ function packApp () {
     arch: 'x64',
     out: './releases/',
     overwrite: true,
-    prune: false,
+    //prune: false,
     asar: false,
     version: '1.4.0'
   };

@@ -10,7 +10,7 @@ Erkennt eine `FRITZ!WLAN Repeater DVB-C` Box im Netzwerk und zeigt die verfügba
 
 
 ## Screenshot
-![screenshot-osx](./screenshot-osx.png)
+![screenshot-osx](./screenshot.png)
 
 
 ## Benutzen
